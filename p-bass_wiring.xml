@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/taeradan/GIT/p-bass_wiring/p-bass_wiring.sch</source>
+    <date>jeu. 10 déc. 2015 16:29:39 CET</date>
+    <tool>Eeschema no-vcs-found-product</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>P-bass series/parralel wiring</title>
+        <company>Yves Dubromelle</company>
+        <rev/>
+        <date>2015-12-10</date>
+        <source>p-bass_wiring.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="Volume1">
+      <value>250k</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x03</footprint>
+      <libsource lib="device" part="POT"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56670E20</tstamp>
+    </comp>
+    <comp ref="Tone1">
+      <value>250k</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x03</footprint>
+      <libsource lib="device" part="POT"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56670F0E</tstamp>
+    </comp>
+    <comp ref="Coil_wiring1">
+      <value>Switch_SPDT_x2</value>
+      <libsource lib="device" part="Switch_SPDT_x2"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5667109C</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>0.1µ</value>
+      <footprint>Capacitors_ThroughHole:C_Disc_D6_P5</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>566720B7</tstamp>
+    </comp>
+    <comp ref="Bypass1">
+      <value>Switch_SPDT_x2</value>
+      <libsource lib="device" part="Switch_SPDT_x2"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56698BC3</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="device" part="C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="POT">
+      <description>Potentionmetre</description>
+      <fields>
+        <field name="Reference">RV</field>
+        <field name="Value">POT</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="Switch_SPDT_x2">
+      <description>Double Single Pole Double Throw (SPDT) switch</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">Switch_SPDT_x2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+        <pin num="4" name="A" type="passive"/>
+        <pin num="5" name="B" type="passive"/>
+        <pin num="6" name="C" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="device">
+      <uri>/usr/share/kicad/library/device.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(C1-Pad1)">
+      <node ref="C1" pin="1"/>
+      <node ref="Tone1" pin="2"/>
+    </net>
+    <net code="2" name="Net-(Bypass1-Pad3)">
+      <node ref="Bypass1" pin="3"/>
+      <node ref="Volume1" pin="1"/>
+      <node ref="Tone1" pin="3"/>
+    </net>
+    <net code="3" name="White_lead">
+      <node ref="Bypass1" pin="2"/>
+      <node ref="Coil_wiring1" pin="3"/>
+    </net>
+    <net code="4" name="Signal">
+      <node ref="Bypass1" pin="5"/>
+    </net>
+    <net code="5" name="Net-(Bypass1-Pad6)">
+      <node ref="Volume1" pin="2"/>
+      <node ref="Bypass1" pin="6"/>
+    </net>
+    <net code="6" name="Net-(Bypass1-Pad1)">
+      <node ref="Bypass1" pin="4"/>
+      <node ref="Bypass1" pin="1"/>
+    </net>
+    <net code="7" name="Green_lead">
+      <node ref="Coil_wiring1" pin="5"/>
+    </net>
+    <net code="8" name="2_blue_&amp;_black_leads">
+      <node ref="C1" pin="2"/>
+      <node ref="Coil_wiring1" pin="6"/>
+      <node ref="Tone1" pin="1"/>
+      <node ref="Volume1" pin="3"/>
+    </net>
+    <net code="9" name="Net-(Coil_wiring1-Pad1)">
+      <node ref="Coil_wiring1" pin="1"/>
+      <node ref="Coil_wiring1" pin="4"/>
+    </net>
+    <net code="10" name="Red_lead">
+      <node ref="Coil_wiring1" pin="2"/>
+    </net>
+  </nets>
+</export>

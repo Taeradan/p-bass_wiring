@@ -1,0 +1,6 @@
+Reference, Value, Footprint, Datasheet
+Volume1,250k,Pin_Headers:Pin_Header_Straight_1x03,
+Tone1,250k,Pin_Headers:Pin_Header_Straight_1x03,
+Coil_wiring1,Switch_SPDT_x2,,
+C1,0.1µ,Capacitors_ThroughHole:C_Disc_D6_P5,
+Bypass1,Switch_SPDT_x2,,
